@@ -1,0 +1,160 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    margin-top: 20px;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    margin-top: 20px;
+    width: 80%;
+    height: 450px;
+    max-width: 1200px;
+    background: #fff;
+    border-radius: 8px;
+}
+
+#image-section {
+    flex: 3; /* Rend la section image plus large */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#image-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-width: 700px; /* Ajuste la taille maximale de l'image */
+}
+
+#image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    z-index: 1; /* S'assurer que l'image de base reste visible */
+}
+
+#sol-overlay {
+    opacity: 1; /* Rend les images de sol superposées opaques */
+    z-index: 2; /* Positionne les images de sol au-dessus de l'image de base */
+}
+
+#peinture-overlay {
+    opacity: 1; /* Rend les images de peinture superposées opaques */
+    z-index: 3; /* Positionne les images de peinture au-dessus des images de sol */
+}
+
+#options {
+    flex: 1; /* Rend la section options plus étroite */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#options h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#sol-options, #peinture-options {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 90px;
+    height: 90px;
+}
+
+button:hover {
+    scale: 105%;
+}
+
+#luxens-bali1 {
+    background-color: #537452;
+   
+}
+
+#luxens-forest3 {
+    background-color: #979b83;
+   
+}
+#luxens-laguna2 {
+    background-color: #51736f;
+   
+}
+#luxens-sage3 {
+    background-color: #82938b;
+   
+}
+#artens-casablanca {
+    background-image: url("images/vignette-artens-casablanca.png");
+    color: #171717;
+
+}
+
+#aubade-abetone {
+    background-image: url("images/vignette-aubade-abetone.jpg");
+    color: #171717;
+}
+
+#artens-branch {
+    background-image: url("images/vignette-artens-carrelage\ bois\ gris.png");
+    color: #171717;
+}
+
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #image-section {
+        order: 2;
+        width: 100%;
+        padding: 10px;
+    }
+
+    #options {
+        order: 1;
+        width: 100%;
+        padding: 10px;
+    }
+
+    #sol-options, #peinture-options {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+        height: auto;
+        font-size: 14px;
+    }
+}
