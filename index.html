@@ -7,43 +7,77 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Test revêtements</h1>
-
-    <div class="container">
-        <section id="image-section">
-            <div id="image-container">
-                <img id="image" src="images/test1.png">
-                <img id="sol-overlay" src="">
-                <img id="peinture-overlay" src="">
-            </div>
-        </section>
-        <section id="options">
-
-          
-            <h3>Changer le sol</h3>
-            <div id="sol-options">
-                <button id="artens-casablanca">Artens <br> Casablanca</button>
-                <button id="aubade-abetone">Aubade <br> Abetone Beige</button>
-                <button id="artens-branch">Artens <br> Branch</button>
-            </div>
-            <h3>Changer la peinture</h3>
-            <div id="peinture-options">
-                <button id="luxens-bali1">Luxens <br> Bali 1</button>
-                <button id="luxens-forest3">Luxens <br>Forest 3</button>
-                <button id="luxens-laguna2">Luxens <br>Laguna 2</button>
-                <button id="luxens-sage3">Luxens <br>Sage 3</button>
-            </div>
-        </section>
-    
-      
+    <h1>DécoViz : Visualisateur de revetements interactifs.</h1>
+    <h3>Choix du type de pièce</h3>
+    <div id="selectPiece">
+        
+        <button class="choixSalon active" id="choixSalon"> Salon</button>
+        <button class="choixChambre" id="choixChambre">Chambre</button>
     </div>
 
-    <!-- <section>
-        <div>
-            <h3>Votre Sélection </h3>
-            <h4>Peinture : <br> Sol : </h4>
+    <div id="salon">
+        
+        <section id="vue-image">
+            <div id="image-container">
+                <img id="imageBaseSalon" src="images/test1.png">
+                <img id="sol-overlay-salon" src="">
+                <img id="peinture-overlay-salon" src="">
             </div>
-    </section> -->
+        </section>
+        <section id="vue-options">
+            <h3>Choix du sol </h3>
+            <div id="salon-sol">
+                <button id="artens-casablanca-salon" onclick="changerImageSalon('artens-casablanca-salon', 'sol')">Artens <br> Casablanca</button>
+                <button id="aubade-abetone-salon"  onclick="changerImageSalon('aubade-abetone-salon', 'sol')">Aubade <br> Abetone Beige</button>
+                <button id="artens-branch-salon" onclick="changerImageSalon('artens-branch-salon', 'sol')">Artens <br> Branch</button>
+                <button id="artens-parquet-chene-blond-salon" onclick="changerImageSalon('artens-parquet-chene-blond-salon', 'sol')">Artens <br> Parquet chêne blond</button>
+            </div>
+            <h3>Choix de la peinture </h3>
+            <div id="salon-peinture">
+                <button id="luxens-bali1-salon" style="background-color: #537452" onclick="changerImageSalon('luxens-bali1-salon', 'peinture')">Luxens <br> Bali 1</button>
+                <button id="luxens-forest3-salon"  style="background-color: #979b83;"onclick="changerImageSalon('luxens-forest3-salon', 'peinture')">Luxens <br>Forest 3</button>
+                <button id="luxens-laguna2-salon" style="background-color: #51736f;"onclick="changerImageSalon('luxens-laguna2-salon', 'peinture')">Luxens <br>Laguna 2</button>
+                <button id="luxens-sage3-salon" style="background-color: #82938b;"onclick="changerImageSalon('luxens-sage3-salon', 'peinture')">Luxens <br>Sage 3</button>
+                <button id="luxens-terra6-salon" style="background-color: #d9c9bb;"onclick="changerImageSalon('luxens-bali1-salon', 'peinture')">Luxens <br>Terra 6</button>
+                <button id="luxens-paper2-salon" style="background-color: #e2d8c7; "onclick="changerImageSalon('luxens-paper2-salon', 'peinture')">Luxens <br>Paper 2</button>
+                <button id="luxens-havana4-salon" style="background-color: #b2927f;"onclick="changerImageSalon('luxens-havana4-salon', 'peinture')">Luxens <br>Havana 4</button>
+                <button id="luxens-trench6-salon" style="background-color: #d5cfc7;"onclick="changerImageSalon('luxens-trench6-salon', 'peinture')">Luxens <br>Trench 6</button>
+
+                
+            </div>
+        </section>
+    </div>
+
+    <div id="chambre">
+        <section id="vue-image">
+            <div id="image-container">
+                <img id="imageBaseChambre" src="images/test2.png">
+                <img id="sol-overlay-chambre" src="">
+                <img id="peinture-overlay-chambre" src="">
+            </div>
+        </section>
+        <section id="vue-options">
+            <h3>Choix du sol </h3>
+            <div id="chambre-sol">
+                <button id="artens-casablanca-chambre" onclick="changerImageSalon('artens-casablanca-chambre', 'sol')">Artens <br> Casablanca</button>
+                <button id="aubade-abetone-chambre"  onclick="changerImageSalon('aubade-abetone-chambre', 'sol')">Aubade <br> Abetone Beige</button>
+                <button id="artens-branch-chambre" onclick="changerImageSalon('artens-branch-chambre', 'sol')">Artens <br> Branch</button>
+                <button id="artens-parquet-chene-blond-chambre" onclick="changerImageSalon('artens-parquet-chene-blond-chambre', 'sol')">Artens <br> Parquet chêne blond</button>
+            </div>
+            <h3>Choix de la peinture </h3>
+            <div id="chambre-peinture">
+                <button id="luxens-bali1-chambre" style="background-color: #537452"onclick="changerImageSalon('luxens-bali1-chambre', 'peinture')">Luxens <br> Bali 1</button>
+                <button id="luxens-forest3-chambre" style="background-color: #979b83;"onclick="changerImageSalon('luxens-forest3-chambre', 'peinture')">Luxens <br>Forest 3</button>
+                <button id="luxens-laguna2-chambre" style="background-color: #51736f;"onclick="changerImageSalon('luxens-laguna2-chambre', 'peinture')">Luxens <br>Laguna 2</button>
+                <button id="luxens-sage3-chambre" style="background-color: #82938b;"onclick="changerImageSalon('luxens-sage3-chambre', 'peinture')">Luxens <br>Sage 3</button>
+                <button id="luxens-terra6-chambre" style="background-color: #d9c9bb;"onclick="changerImageSalon('luxens-terra6-chambre', 'peinture')">Luxens <br>Terra 6</button>
+                <button id="luxens-paper2-chambre" style="background-color: #e2d8c7;"onclick="changerImageSalon('luxens-paper2-chambre', 'peinture')">Luxens <br>Paper 2</button>
+                <button id="luxens-havana4-chambre" style="background-color: #b2927f; "onclick="changerImageSalon('luxens-havana4-chambre', 'peinture')">Luxens <br>Havana 4</button>
+                <button id="luxens-trench6-chambre"  style="background-color: #d5cfc7;"onclick="changerImageSalon('luxens-trench6-chambre', 'peinture')">Luxens <br>Trench 6</button>
+            </div>
+        </section>
+    </div>
+
     <script src="main.js"></script>
 </body>
 </html>
